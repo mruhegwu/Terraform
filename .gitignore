@@ -1,0 +1,77 @@
+# Git ignore rules for Terraform infrastructure repository
+
+# ============================================================
+# Environment files (NEVER commit real credentials)
+# ============================================================
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+*.env
+
+# ============================================================
+# Terraform
+# ============================================================
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.*.backup
+.terraform.lock.hcl
+terraform.tfvars
+environments/*.tfvars
+!environments/*.tfvars.example
+*.plan
+*.tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ============================================================
+# Node.js / TypeScript
+# ============================================================
+node_modules/
+dist/
+build/
+.next/
+out/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn/
+
+# ============================================================
+# Docker
+# ============================================================
+docker/localstack-data/
+docker/.volumes/
+
+# ============================================================
+# AWS
+# ============================================================
+.aws/credentials
+*.pem
+*.key
+
+# ============================================================
+# IDE & OS files
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# Temporary files
+# ============================================================
+/tmp/
+*.tmp
+*.bak
